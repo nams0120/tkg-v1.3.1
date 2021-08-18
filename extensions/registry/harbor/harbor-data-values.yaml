@@ -12,7 +12,7 @@ image:
 namespace: tanzu-system-registry
 
 # The FQDN for accessing Harbor admin UI and Registry service.
-hostname: nirs-harbor.cnd.lab 
+hostname: <harbor FQDN> 
 # The network port of the Envoy service in Contour or other Ingress Controller.
 port:
   https: 443
@@ -32,31 +32,31 @@ tlsCertificate:
 enableContourHttpProxy: true
 
 # [Required] The initial password of Harbor admin.
-harborAdminPassword: VMware1!
+harborAdminPassword: <harbor-PWD>
 
 # [Required] The secret key used for encryption. Must be a string of 16 chars.
-secretKey: YtsCfUThl5wCfSB1
+secretKey: 
 
 database:
   # [Required] The initial password of the postgres database.
-  password: gejMzltYl2S8JbsE
+  password: 
 
 core:
   replicas: 1
   # [Required] Secret is used when core server communicates with other components.
-  secret: NgLC6uITXCEyM7Ve
+  secret: 
   # [Required] The XSRF key. Must be a string of 32 chars.
-  xsrfKey: 733tarOOjuN4rf1C2kywf4xw0VRmhJEn
+  xsrfKey: 
 jobservice:
   replicas: 1
   # [Required] Secret is used when job service communicates with other components.
-  secret: c6d6wNFWSlhOvK9U
+  secret: 
 registry:
   replicas: 1
   # [Required] Secret is used to secure the upload state from client
   # and registry storage backend.
   # See: https://github.com/docker/distribution/blob/master/docs/configuration.md#http
-  secret: yD9rVAZqdru4NsYH
+  secret: 
 notary:
   # Whether to install Notary
   enabled: true
